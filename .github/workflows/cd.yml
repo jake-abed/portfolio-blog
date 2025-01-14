@@ -1,4 +1,4 @@
-name: Portfolio/Blog CD
+name: Portfolio-Blog CD
 
 on:
   push:
@@ -25,9 +25,9 @@ jobs:
         run: "npm run build"
 
       - id: auth
-      uses: google-github-actions/auth@v2
-      with:
-        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
