@@ -1,0 +1,93 @@
+---
+const path = Astro.url.pathname;
+---
+
+<nav>
+  <a href="/" class={path === "/" ? "active" : ""}>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon" viewBox="0 0 14 14" id="Home-2--Streamline-Flex" height="32" width="32">
+      <g id="home-2--door-entrance-home-house-roof-round-shelter">
+      <path id="Rectangle 15" stroke-linecap="round" stroke-linejoin="round" d="M3.83679 12.7965h6.32661c0.6694 0 1.2388 -0.4884 1.3407 -1.1501 0.1619 -1.0516 0.1995 -2.1176 0.1124 -3.17619h1.2237c0.3943 0 0.6334 -0.43516 0.422 -0.76804l-0.2117 -0.33341C11.777 5.36357 10.1566 3.60127 8.265 2.16444l-0.66005 -0.50137c-0.35753 -0.27157 -0.85222 -0.27157 -1.20975 0l-0.66014 0.50143C3.84351 3.60128 2.22303 5.36355 0.949568 7.3687l-0.211779 0.33346c-0.211412 0.33288 0.027731 0.76805 0.422071 0.76805h1.22376c-0.08703 1.05859 -0.0495 2.12459 0.11243 3.17619 0.10189 0.6617 0.67126 1.1501 1.34074 1.1501Z" stroke-width="1"></path>
+      <path id="Vector (Stroke)" stroke-linecap="round" stroke-linejoin="round" d="M7.00013 8.08887c0.92099 0 1.66761 0.74661 1.66761 1.66761v3.03992H5.33252V9.75648c0 -0.921 0.74661 -1.66761 1.66761 -1.66761Z" stroke-width="1"></path>
+      </g>
+    </svg>
+    <p>HOME</p>
+  </a>
+  <a href="/about/" class={path.includes("about") ? "active" : ""}>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon" viewBox="0 0 14 14" id="User-Circle-Single--Streamline-Flex" height="32" width="32"><desc>User Circle Single Streamline Icon: https://streamlinehq.com</desc>
+      <g id="user-circle-single--circle-geometric-human-person-single-user">
+      <path id="Intersect" stroke-linecap="round" stroke-linejoin="round" d="M10.7045 12.0345c-0.2065 -0.7775 -0.653 -1.4723 -1.27879 -1.9838 -0.68453 -0.55951 -1.54144 -0.86515 -2.42553 -0.86515 -0.88409 0 -1.74099 0.30564 -2.42552 0.86515 -0.62578 0.5115 -1.07231 1.2063 -1.27876 1.9838" stroke-width="1"></path>
+      <path id="Vector" stroke-linecap="round" stroke-linejoin="round" d="M7 13.5c4.16 0 6.5 -2.34 6.5 -6.5S11.16 0.5 7 0.5 0.5 2.84 0.5 7s2.34 6.5 6.5 6.5Z" stroke-width="1"></path>
+      <path id="Vector_2" stroke-linecap="round" stroke-linejoin="round" d="M6.99902 7.58008c1.4 0 2.1875 -0.7875 2.1875 -2.1875s-0.7875 -2.1875 -2.1875 -2.1875 -2.1875 0.7875 -2.1875 2.1875 0.7875 2.1875 2.1875 2.1875Z" stroke-width="1"></path>
+      </g>
+    </svg>
+    <p>ABOUT</p>
+  </a>
+  <a href="/blog/" class={path.includes("blog") ? "active" : ""}>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon" viewBox="0 0 14 14" id="Align-Text-Top--Streamline-Flex" height="32" width="32">
+      <g id="align-text-top">
+        <path id="Vector 1061" stroke-linecap="round" stroke-linejoin="round" d="m4.30957 3.5376 5.375 0" stroke-width="1"></path>
+        <path id="Vector 1062" stroke-linecap="round" stroke-linejoin="round" d="m4.30957 6.2876 5.375 0" stroke-width="1"></path>
+        <path id="Intersect" stroke-linecap="round" stroke-linejoin="round" d="M0.959867 10.2685C1.114 11.7092 2.2727 12.8679 3.71266 13.0284 4.78221 13.1476 5.88037 13.25 7 13.25s2.21779 -0.1024 3.2873 -0.2216c1.44 -0.1605 2.5987 -1.3192 2.7528 -2.7599 0.1138 -1.06348 0.2099 -2.15535 0.2099 -3.2685 0 -1.11316 -0.0961 -2.20502 -0.2099 -3.26853 -0.1541 -1.44065 -1.3128 -2.59936 -2.7528 -2.759861C9.21779 0.852392 8.11963 0.75 7 0.75S4.78221 0.852392 3.71266 0.971609C2.2727 1.13211 1.114 2.29082 0.959867 3.73147 0.846083 4.79498 0.75 5.88684 0.75 7c0 1.11315 0.096084 2.20502 0.209867 3.2685Z" stroke-width="1"></path>
+      </g>
+    </svg>
+    <p>BLOG</p>
+  </a>
+</nav> <style>
+  nav {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--white);
+    box-shadow: inset 1px 1px 6px 1px #999, 0 0 4px 1px #21212166;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 1rem;
+  }
+
+  :global(.dark) nav {
+    box-shadow: inset 1px 1px 6px 1px #99999966, 0 0 4px 1px #f2f2f266;
+    background-color: var(--grey);
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  a p {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  a.active p {
+    color: var(--pink);
+  }
+
+  a.active {
+    font-weight: 600;
+    filter: drop-shadow(0px 0px 0.25rem var(--transparent-pink));
+  }
+
+  .icon {
+    stroke: var(--black);
+    fill: none;
+  }
+
+  a.active .icon {
+    stroke-width: 8px;
+    stroke: var(--pink);
+  }
+
+  :global(.dark) .icon {
+    stroke: var(--white);
+  }
+
+</style>

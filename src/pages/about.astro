@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "About Jake Abed!";
+
+const me = {
+  firstName: "Jake",
+  country: "USA",
+  occupation: "Software Engineer",
+  hobbies: ["Video Games", "Backpacking", "Music", "Cats"],
+};
+
+const skills = ["TypeScript", "Go", "Elixir", "SQL", "Docker", "Next.js", "Deno"];
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title={title}>
+  <div class="main">
+    <h1>About Me</h1>
+    <h2>... and this Astro site?!?</h2>
+    <p>Hitting you with that omae wa mo shindeiru...</p>
+
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {me.firstName}.</li>
+      <li>I live in {me.country} and I work as a {me.occupation}.</li>
+      {me.hobbies.length >= 2 &&
+        <li>Two of my hobbies are: {me.hobbies[0]} and {me.hobbies[1]}.</li>
+      }
+    </ul>
+    <p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+  </div>
+</Layout>
+
+<style>
+  .main {
+    width: min(800px, 90dvw);
+    margin: 0 auto;
+    margin-top: 8rem;
+  } 
+</style>

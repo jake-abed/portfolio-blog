@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Buffered Bytes - Jake Abed's Blog";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title={title}>
+  <div class="main">
+    <h1>Buffered Bytes</h1>
+    <h2>Ayy, I'm blogging here... said lots of people, ever.</h2>
+    <p>Software, Web, and Game Dev thoughts for you.</p>
+
+    <ul>
+      <li><a href="/blogs/post-1/">Post 1</a></li>
+      <li><a href="/blogs/post-2/">Post 2</a></li>
+      <li><a href="/blogs/post-3/">Post 3</a></li>
+    </li>
+  </div>
+</Layout>
+
+<style>
+  .main {
+    width: min(800px, 90dvw);
+    margin: 0 auto;
+    margin-top: 8rem;
+  } 
+</style>

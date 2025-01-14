@@ -1,0 +1,79 @@
+---
+---
+<button id="themeToggle">
+  <svg class="bulb" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" fill="none"; viewBox="-0.5 -0.5 16 16" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" id="Lightbulb--Streamline-Lucide" height="16" width="16">
+    <path d="M9.375 8.75c0.125 -0.625 0.4375 -1.0625 0.9375 -1.5625 0.625 -0.5625 0.9375 -1.375 0.9375 -2.1875A3.75 3.75 0 0 0 3.75 5c0 0.625 0.125 1.375 0.9375 2.1875 0.4375 0.4375 0.8125 0.9375 0.9375 1.5625" stroke-width="1"></path>
+    <path d="M5.625 11.25h3.75" stroke-width="1"></path>
+    <path d="M6.25 13.75h2.5" stroke-width="1"></path>
+  </svg>
+</button>
+<style>
+  #themeToggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    padding: 3px 4px 0px 5px;
+    border: 0px;
+    box-shadow: inset 1px 1px 8px 1px #13111133;
+    border-radius: 50%;
+    background: none;
+    transform: rotate(0);
+  }
+  .bulb { 
+    stroke: var(--black);
+  }
+
+  #themeToggle.animate {
+    animation: 0.35s 1 ease-in-out flip;
+  }
+
+  @keyframes flip {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  :global(.dark) #themeToggle { box-shadow: inset 1px 1px 8px 1px #f2f2f233; }
+  :global(.dark) .bulb { stroke: var(--white); }
+</style>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') ?? "light";
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+      return 'light';
+  })();
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+  const handleToggleClick = () => {
+    document.getElementById("themeToggle")?.classList.remove("animate");
+    console.log(document.getElementById("themeToggle"));
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    document.getElementById("themeToggle")?.classList.add("animate");
+  }
+
+  document.getElementById("themeToggle")?.addEventListener("click", handleToggleClick);
+  document.getElementById("themeToggle")?.addEventListener("animationend", (e) => {
+    e.target.classList.remove("animate");
+  });
+</script>

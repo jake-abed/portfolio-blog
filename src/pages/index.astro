@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IntroBox from '../components/IntroBox.astro';
+import Projects from '../components/Projects.astro';
+
+const title = "Jake Abed's Portfolio & Blog Site";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title={title}>
+  <div class="main">
+    <section class="intro">
+      <IntroBox />
+      <div id="to-projects">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" id="Arrow-Through-Elipse-Down-Fill--Streamline-Outlined-Fill-Expansion" height="24" width="24">
+          <g id="arrow-through-elipse-down-fill">
+            <path id="Union" fill-rule="evenodd" d="m11 9 0 -7h2l0 7h-2Zm-5 7 1.4 -1.425 3.6 3.6 0 -5.1944c-1.89576 -0.0734 -3.62522 -0.354 -4.96467 -0.7873 -0.78029 -0.2525 -1.48423 -0.5745 -2.0142 -0.9799C3.506 10.8194 3 10.2198 3 9.41166c0 -0.61883 0.30201 -1.12121 0.66406 -1.48869 0.35829 -0.36366 0.83075 -0.65638 1.34221 -0.89426 1.02698 -0.47765 2.41039 -0.82524 3.95929 -1.02094L9 6.00342l0 2.01715c-1.33195 0.18385 -2.41612 0.48013 -3.15028 0.82159 -0.38878 0.18082 -0.63032 0.35187 -0.76097 0.48447 -0.036 0.03654 -0.05872 0.06484 -0.07279 0.08502 0.02734 0.0404 0.08849 0.11238 0.22027 0.21318 0.27967 0.21392 0.7473 0.44957 1.41473 0.66557 1.32372 0.4282 3.21502 0.7095 5.34904 0.7095 2.134 0 4.0253 -0.2813 5.349 -0.7095 0.6675 -0.216 1.1351 -0.45164 1.4148 -0.66557 0.1318 -0.1008 0.1929 -0.17278 0.2202 -0.21318 -0.014 -0.02018 -0.0368 -0.04848 -0.0728 -0.08502 -0.1306 -0.1326 -0.3721 -0.30365 -0.7609 -0.48447 -0.7342 -0.34146 -1.8184 -0.63774 -3.1503 -0.82159l0 -2.01715 0.0344 0.00435c1.5489 0.1957 2.9324 0.54329 3.9593 1.02094 0.5115 0.23789 0.9839 0.5306 1.3422 0.89426 0.3621 0.36748 0.6641 0.86987 0.6641 1.48869 0 0.80814 -0.506 1.40774 -1.0211 1.80174 -0.53 0.4054 -1.2339 0.7274 -2.0142 0.9799 -1.3395 0.4333 -3.0689 0.7139 -4.9647 0.7873v5.1944l3.6 -3.575L18 16l-6 6 -6 -6Zm13.0053 -6.55039c-0.0001 -0.00001 -0.0009 -0.00173 -0.0018 -0.00517 0.0015 0.00345 0.002 0.00517 0.0018 0.00517Zm-0.0019 -0.07216c0.0007 -0.00259 0.0012 -0.00387 0.0013 -0.00386 0.0001 0.00001 -0.0003 0.0013 -0.0013 0.00386ZM4.99533 9.37359c0.00009 -0.00001 0.00061 0.00127 0.00126 0.00386 -0.00103 -0.00256 -0.00136 -0.00386 -0.00126 -0.00386Zm0.00115 0.07085c-0.0009 0.00343 -0.00167 0.00516 -0.00183 0.00516 -0.00015 0.00001 0.0003 -0.00171 0.00183 -0.00516Z" clip-rule="evenodd" stroke-width="0.5"></path>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <section id="projects">
+      <Projects />
+    </section>
+  </div>
+  <div class="intro-box">
+
+  </div>
+</Layout>
+
+<style>
+  .main {
+    width: min(800px, 90dvw);
+   margin: 0 auto;
+  }
+
+  .intro {
+    min-height: 100svh;
+    margin-bottom: 20svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .intro-box {
+    border: 2px 1rem
+  }
+
+  #projects {
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    fill: var(--black);
+    stroke: var(--black);
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+    animation: 1s ease-in-out 0.45s 1 forwards fade-in-up;
+  }
+
+  .icon:hover {
+    fill: var(--pink);
+    stroke: var(--pink);
+  }
+
+  :global(.dark) .icon {
+    fill: var(--white);
+    stroke: var(--white);
+  }
+
+  :global(.dark) .icon:hover {
+    fill: var(--pink);
+    stroke: var(--pink);
+  }
+</style>
+
+<script>
+  function scrollTo(element) {
+    return () => {
+      const el = document.getElementById(element);
+      if (!el) {
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      console.log(rect.y);
+      window.scrollTo({top: rect.y, behavior: "smooth"});
+    }
+  }
+
+  document.getElementById("to-projects")?.addEventListener("click", scrollTo("projects"));
+  
+
+</script>
