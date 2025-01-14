@@ -37,3 +37,6 @@ jobs:
 
       - name: Build and Push to GCP Registry
         run: gcloud builds submit --tag us-west1-docker.pkg.dev/portfolio-blog-31169/portfolio-blog/portfolio-blog:latest .
+
+      - name: Deploy to Google Cloud Run
+        run: gcloud run deploy portfolio-blog --image us-west1-docker.pkg.dev/portfolio-blog-31169/portfolio-blog/portfolio-blog:latest --region us-west1 --allow-unauthenticated --project portfolio-blog-31169 --max-instances=2
