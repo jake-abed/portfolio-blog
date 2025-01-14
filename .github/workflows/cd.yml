@@ -1,0 +1,39 @@
+name: Portfolio/Blog CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code!
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        users: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install Step
+        run: "npm install"
+
+      - name: Build Step
+        run: "npm run build"
+
+      - id: auth
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: use gcloud CLI
+        run: gcloud info
+
+      - name: Build and Push to GCP Registry
+        run: gcloud builds submit --tag us-west1-docker.pkg.dev/portfolio-blog-31169/portfolio-blog/portfolio-blog:latest .

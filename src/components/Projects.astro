@@ -1,22 +1,53 @@
 ---
 ---
-<div class="project">
-  <h3>Lore CLI</h3>
+<div class="project-wrapper">
+  <div class="project">
+    <h3>Lore CLI</h3>
+    <p>A CLI to help dungeon masters manage campaign lore and notes in a low distraction setting. Fully open-source and written in Go using SQLite3.</p>
+  </div>
+  <div class="project">
+    <h3>Geistfeld</h3>
+    <p>A top-down survival horror game featuring asynchronous multi-player inspired by Dark Souls message system. Features all original art, music, and code!</p>
+  </div>
+  <div class="project">
+    <h3>Koku: A Void Ant</h3>
+    <p>A mini metroidvania game made for Godot Wild Jame #69! Aside from the font & engine, all art, music, & code were made from scratch in 9 days by yours truly.</p>
+  </div>
+  <div class="project">
+    <h3>AOS Inventory Sync</h3>
+    <p>A production web app to sync inventory between two disparate platforms. Features a RESTful API and a hand-rolled auth system.</p>
+  </div> 
 </div>
 
 <style>
+  .project-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: min(800px, 90dvw);
+  }
+
   .project {
     display: flex;
+    flex-direction: column;
     opacity: 0;
-    flex-direction: row;
+    width: min(300px, 90dvw);
     justify-content: space-evenly;
     align-items: center;
-    gap: 2rem;
-    padding: 4rem;
+    gap: 0.75rem;
+    padding: 2rem;
     border: 2px solid var(--pink);
     border-radius: 1rem;
     box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
     max-width: min(800px, 95dvw);
+  }
+
+  .project * {
+    margin: 0;
+    padding: 0;
   }
 
   .project.animation {

@@ -1,28 +1,27 @@
 ---
 layout: '../../layouts/BlogLayout.astro'
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+title: 'Is This Thing On?'
+pubDate: 2025-01-14
+description: 'This is an Astro Blog, huh? Well, here goes nothing.'
+author: 'Jake Abed'
+tags: ["portfolio", "blogging", "learning in public"]
 ---
-# My First Blog Post
+# Is This Thing On?
 
-Published on: 2022-07-01
+Published on: 2025-01-14
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+Welcome to my _new blog_ on my _new portfolio_ site! My old portfolio was making me sad, so I decided it was time for a spruce up.
 
-## What I've accomplished
+## Why Astro
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
-
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
-
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+1. Astro is great for SEO. Portfolios and blogs care more about SEO than complex state management in my opinion.
+2. I wanted a no fuss, simple blog. Astro seems like a great choice.
+3. React is cool, but there are more things to life. Quick animations and styling are just really easy without React's abstractions.
+4. I also wanted it to be simple and easy to host and move around. Packing up a quick Docker image and sending wherever is easy as pie.
 
 ## What's next
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+IDK, probably lot's of unhinged posts about my thoughts on learning, coding, working. Progress updates on my video game development journey too!
+
+Until Next Time,\
+Jake
