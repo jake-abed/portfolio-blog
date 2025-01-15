@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+
+const { name, description, imgURL, techUsed } = Astro.props;
+---
+<div class="project" >
+  <div class="card">
+    <div class="front">
+      <h3>{name}</h3>
+      <Image src={imgURL} width=315 height=182 alt={description}/>
+    </div>
+    <div class="back">
+      <p>{description}</p>
+      <div>
+        <p><span>Tech Used: </span> {techUsed}</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<style>
+  .project {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: 400px;
+    height: 311px;
+    perspective: 1000px;
+}
+  .project > .card.flip {
+    cursor: pointer;
+    transform: rotateX(180deg);
+  }
+
+  .card {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+
+  .project .front, .back {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: inset 0px 0px 16px 4px var(--transparent-pink);
+  }
+
+  .front {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    background-color: var(--white);
+    transform: rotateX(180deg);
+  }
+
+  :global(.dark) .back {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .back div {
+    place-self: start;
+  }
+
+  .project img {
+    border-radius: 1rem;
+  }
+
+  h3,
+  p,
+  span {
+    margin: 0;
+    padding: 0;
+  }
+
+  p { text-align: left; }
+
+  h3 { font-size: 2rem; text-align: center; }
+
+  span { font-weight: 700; font-size: 1.125rem; }
+
+  .project.animation {
+    animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
+  }
+</style>
+
+<script>
+  const projectCards = document.querySelectorAll(".project");
+
+  for (const project of projectCards) {
+    console.log(project);
+    project.addEventListener("click", (e) => {
+      project.children[0].classList.toggle("flip");
+    });
+  }
+</script>
+

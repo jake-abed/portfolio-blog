@@ -2,12 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 const title = "Jake Abed's Dev Blog";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const desc = "Blog posts fresh out of the oven that is Jake's mind. Ruminations on programming, game dev, & life.";
 ---
 
-<Layout title={title}>
+<Layout title={title} description={desc}>
   <div class="main">
     <h1>Jake Abed's Dev Blog</h1>
     <h2>Read up on my goofy Pokemon trainer style journey to understanding and programming enlightenment.</h2>
@@ -21,7 +19,7 @@ const title = "Jake Abed's Dev Blog";
 
 <style>
   .main {
-    width: min(800px, 90dvw);
+    width: min(1000px, 90dvw);
     min-height: 80svh;
     margin: 0 auto;
     margin-top: 8rem;

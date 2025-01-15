@@ -1,26 +1,33 @@
 ---
+import { Image } from "astro:assets"; 
+import Project from "./Project.astro";
 ---
-<div class="project-wrapper">
-  <div class="project">
-    <h3>Lore CLI</h3>
-    <p>A CLI to help dungeon masters manage campaign lore and notes in a low distraction setting. Fully open-source and written in Go using SQLite3.</p>
-  </div>
-  <div class="project">
-    <h3>Geistfeld</h3>
-    <p>A top-down survival horror game featuring asynchronous multi-player inspired by Dark Souls message system. Features all original art, music, and code!</p>
-  </div>
-  <div class="project">
-    <h3>WTRMLN Chat</h3>
-    <p>A fully anonymous chat app with disposable rooms. Written in Elixir's Phoenix framework with a PostgreSQL database.</p>
-  </div>
-  <div class="project">
-    <h3>Koku: A Void Ant</h3>
-    <p>A mini metroidvania game made for Godot Wild Jame #69! Aside from the font & engine, all art, music, & code were made from scratch in 9 days by yours truly.</p>
-  </div>
-  <div class="project">
-    <h3>AOS Inventory Sync</h3>
-    <p>A production web app to sync inventory between two disparate platforms. Features a RESTful API and a hand-rolled auth system.</p>
-  </div> 
+<div class="project-wrapper"> 
+  <Project
+    name="Lore CLI"
+    description="A CLI to help dungeon masters manage campaign lore and notes in a low distraction setting. Fully open-source and written in Go using SQLite3."
+    imgURL="/lore.webp" 
+    techUsed="Go, SQLite3, & Charm Huh" />
+  <Project
+    name="Geistfeld"
+    description="A top-down survival horror game featuring asynchronous multi-player inspired by Dark Souls message system. Features all original art, music, and code!"
+    imgURL="/geistfeld.webp" 
+    techUsed="Godot, Deno, & Hono"/>
+  <Project
+    name="WTRMLN Chat"
+    description="A fully anonymous chat app with disposable rooms. Written in Elixir's Phoenix framework with a PostgreSQL database."
+    imgURL="/wtrmln-chat.webp"
+    techUsed="Elixir, Phoenix, Tailwind CSS, & PostgreSQL" />
+  <Project
+    name="Koku: A Void Ant"
+    description="A mini metroidvania game made for Godot Wild Jame #69! Aside from the font & engine, all art, music, & code were made from scratch in 9 days by yours truly."
+    imgURL="/koku.webp"
+    techUsed="Godot" />
+  <Project
+    name="AOS Inventory Sync"
+    description="A production web app to sync inventory between two disparate platforms. Features a RESTful API and a hand-rolled auth system."
+    imgURL="/inventory-sync.webp"
+    techUsed="Deno, Fresh, Preact, & Tailwind CSS" />
 </div>
 
 <style>
@@ -30,34 +37,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    width: min(800px, 90dvw);
-  }
-
-  .project {
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    width: min(300px, 90dvw);
-    min-height: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 2rem;
-    border: 2px solid var(--pink);
-    border-radius: 1rem;
-    box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
-    max-width: min(800px, 95dvw);
-  }
-
-  .project * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .project.animation {
-    animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
-  }
+    gap: 3rem;
+  } 
 </style>
 
 <script>

@@ -14,7 +14,7 @@ const { title, description } = frontmatter;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico?" />
 		<meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -41,6 +41,7 @@ const { title, description } = frontmatter;
 
   .blog-post {
     width: min(800px, 90dvw);
+    min-height: 80dvh;
     margin: 0 auto;
   }
 </style>
