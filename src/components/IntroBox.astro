@@ -14,6 +14,7 @@ import { Image } from 'astro:assets';
 <style>
   .intro-box {
     display: flex;
+    width: fit-content;
     opacity: 0;
     flex-direction: row;
     justify-content: space-evenly;
@@ -45,9 +46,9 @@ import { Image } from 'astro:assets';
     color: var(--pink);
   } 
 
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     .intro-box {
-      padding: 2rem;
+      padding: 1.5rem;
     }
   }
 </style>
