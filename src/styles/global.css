@@ -13,13 +13,6 @@
 html {
   background-color: var(--white);
   color: var(--black);
-  width: 100svw;
-  min-height: 100dvh;
-}
-
-body {
-  width: 100%;
-  height: 100%;
 }
 
 html a {
@@ -34,6 +27,19 @@ html.dark {
 .dark a {
   color: var(--white);
 }
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100dvw;
+}
+
+.main {
+    width: min(1000px, 90dvw);
+    min-height: 80svh;
+    margin: 0 auto;
+    margin-top: 6rem;
+  }
 
 @keyframes fade-in-up {
     from {

@@ -6,8 +6,8 @@ const { name, description, imgURL, techUsed } = Astro.props;
 <div class="project" >
   <div class="card">
     <div class="front">
-      <h3>{name}</h3>
       <Image src={imgURL} width=315 height=182 alt={description}/>
+      <h3>{name}</h3>
     </div>
     <div class="back">
       <p>{description}</p>
@@ -15,7 +15,6 @@ const { name, description, imgURL, techUsed } = Astro.props;
         <p><span>Tech Used: </span> {techUsed}</p>
       </div>
     </div>
-    
   </div>
 </div>
 
@@ -24,12 +23,11 @@ const { name, description, imgURL, techUsed } = Astro.props;
     margin: 0;
     padding: 0;
     opacity: 0;
-    width: 400px;
+    width: min(400px, 90dvw);
     height: 311px;
     perspective: 1000px;
 }
   .project > .card.flip {
-    cursor: pointer;
     transform: rotateX(180deg);
   }
 
@@ -41,6 +39,7 @@ const { name, description, imgURL, techUsed } = Astro.props;
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
+    cursor: pointer;
   }
 
   .project .front, .back {
