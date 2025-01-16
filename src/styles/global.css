@@ -10,6 +10,10 @@
   margin: 0;
 };
 
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: 'Fira Code', monospace;
+}
+
 html {
   background-color: var(--white);
   color: var(--black);
@@ -17,7 +21,7 @@ html {
   width: 100svw;
   height: auto;
   scrollbar-width: none;
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 body { -ms-overflow-style: none; width: 100svw; }
