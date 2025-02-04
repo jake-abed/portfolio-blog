@@ -3,18 +3,19 @@ import { Image } from 'astro:assets';
 ---
 <div class="intro-box">
   <div class="pic-container">
-    <Image loading="eager" src="/jake-pfp.webp" alt="Jake wearing a Dan Flash's inspired sweater" height=150 width=150>
+    <Image loading="eager" src="/jake-pfp.webp" alt="Jake wearing a Dan Flash's inspired sweater" height=300 width=300>
   </div>
   <div class="intro-text">
     <h2>Hey, I'm <span>Jake Abed</span>!</h2>
     <p>I'm a full-stack software engineer & game developer!</p>
+    <p class="hidden-text">... and something of a goofball too!</p>
   </div>
 </div>
 
 <style>
   .intro-box {
     display: flex;
-    width: min(600px, 80%);
+    width: min(80%, 1200px);
     opacity: 0;
     flex-direction: row;
     justify-content: space-evenly;
@@ -29,17 +30,36 @@ import { Image } from 'astro:assets';
 
   .pic-container {
     display: flex;
-    width: min(50%, 100px);
+    width: min(50%, 300px);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 8px 1px var(--transparent-pink);
   }
 
   .pic-container img {
     border-radius: 1rem;
     max-width: 100%;
     height: auto;
+    box-shadow: 0px 0px 8px 2px var(--transparent-pink);
   }
 
-  .intro-text {
-    width: 80%;
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+  }
+
+  p.hidden-text {
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.75s 0.5s;
+    cursor: default;
+  }
+
+  p.hidden-text:hover {
+    opacity: 1;
   }
 
   h2 span {
@@ -48,7 +68,8 @@ import { Image } from 'astro:assets';
 
   @media (max-width: 1000px) {
     .intro-box {
-      padding: 1.5rem;
+      padding: 2rem;
+      flex-direction: column;
     }
   }
 </style>

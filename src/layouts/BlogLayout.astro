@@ -25,7 +25,9 @@ const { title, description } = frontmatter;
       <Header />
     </div>
     <div class="main">
+      <section id="blog">
         <slot />
+      </section>
     </div>
     <Footer />
 	</body>
@@ -33,4 +35,11 @@ const { title, description } = frontmatter;
 
 <style is:global>
   font-family: 'Fira Code', monospace;
+</style>
+
+<style>
+  #blog {
+    width: min(1000px, 90dvw);
+    margin: 0 auto;
+  }  
 </style>

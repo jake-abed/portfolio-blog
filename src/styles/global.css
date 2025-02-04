@@ -1,66 +1,79 @@
 :root {
-  --white: #FAF9F6;
-  --black: #1A1A1A;
-  --grey: #262626;
-  --pink: #DA627D;
-  --transparent-pink: #DA627D66;
+	--white: #faf9f6;
+	--black: #1a1a1a;
+	--grey: #262626;
+	--pink: #da627d;
+	--transparent-pink: #da627d66;
 }
 
 * {
-  margin: 0;
-};
+	margin: 0;
+}
 
-h1, h2, h3, h4, h5, h6, p, span {
-  font-family: 'Fira Code', monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+	font-family: 'Fira Code', monospace;
 }
 
 html {
-  background-color: var(--white);
-  color: var(--black);
-  margin: auto;
-  width: 100svw;
-  height: auto;
-  scrollbar-width: none;
-  font-family: 'Fira Code', monospace;
+	background-color: var(--white);
+	color: var(--black);
+	margin: auto;
+	width: 100svw;
+	height: auto;
+	scrollbar-width: none;
+	font-family: 'Fira Code', monospace;
 }
 
-body { -ms-overflow-style: none; width: 100svw; }
-body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
+body {
+	-ms-overflow-style: none;
+	width: 100svw;
+}
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-button {
+	display: none;
+}
 
 html a {
-  color: var(--black);
+	color: var(--black);
 }
 
 html.dark {
-  background-color: var(--black);
-  color: var(--white);
+	background-color: var(--black);
+	color: var(--white);
 }
 
 .dark a {
-  color: var(--white);
+	color: var(--white);
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  width: 100svw;
+	position: absolute;
+	top: 0;
+	width: 100svw;
 }
 
 .main {
-    width: min(1000px, 90svw);
-    min-height: 80svh;
-    margin: 0 auto;
-    margin-top: 7rem;
-  }
+	width: 100svw;
+	min-height: 80svh;
+	margin: 0 auto;
+	margin-top: 7rem;
+}
 
 @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(4rem);
-    }
+	from {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

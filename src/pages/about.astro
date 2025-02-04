@@ -6,7 +6,30 @@ const desc = "Information all aboout Jake Abed, software engineer & philosopher 
 ---
 
 <Layout title={title} description={desc}>
-  <h1>About Jake Abed</h1>
-  <h2>Also known as the "Jake of All Trades"...</h2>
-  <p>Being a polymath is cooler than people give it credit for in my opinion.</p>
+  <section id="about">
+    <h1>About Me</h1>
+    <h2>Also known as the "Jake of All Trades"...</h2>
+    <p>Being a polymath is cooler than people give it credit for in my opinion.</p>
+  </section>
 </Layout>
+
+<style>
+  #about {
+    width: min(1000px, 90dvw);
+    margin: 0 auto;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding: 0.25rem 0 1rem 0;
+  }
+</style>

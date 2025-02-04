@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^9.0.1",
+    "@astrojs/node": "^9.0.2",
     "@fontsource/fira-code": "^5.1.1",
-    "astro": "^5.1.5"
+    "astro": "^5.2.5"
   }
 }
