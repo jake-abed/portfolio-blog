@@ -37,9 +37,32 @@ const { title, description } = frontmatter;
   font-family: 'Fira Code', monospace;
 </style>
 
+<style is:global>
+  #blog h1 {
+    padding: 1rem 0;
+  }
+
+  #blog p {
+    padding: 0.5rem;
+  }
+
+  #blog .astro-code {
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: scroll;
+  }
+  </style>
+
 <style>
   #blog {
-    width: min(1000px, 90dvw);
-    margin: 0 auto;
-  }  
+    opacity: 0;
+    width: min(1000px, 80%);
+    margin: 8rem auto;
+    padding: 1rem;
+    border: 2px solid var(--pink);
+    border-radius: 2rem;
+    box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
+    animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
+  } 
+
 </style>

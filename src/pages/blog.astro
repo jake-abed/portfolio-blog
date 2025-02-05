@@ -7,18 +7,62 @@ const desc = "Blog posts fresh out of the oven that is Jake's mind. Ruminations 
 
 <Layout title={title} description={desc}>
   <section id="posts">
-    <h1>Jake Abed's Dev Blog</h1>
-    <h2>Read up on my goofy Pokemon trainer style journey to understanding and programming enlightenment.</h2>
-    <p>Software, Web, and Game Dev thoughts for your eyes only. Probably?</p>
+    <h1>Jake's Blog</h1>
+    <h2>Is this thing on?<h2>
+    <p>Software, Web, and Game Dev thoughts for your eyes only.</p>
     <ul>
-    <li><a href="/blogs/post-1/">Post 1</a></li>
+      <li><a href="/blogs/odin-rotlang/">Making A Rotlang Lexer with Odin</a><span>02/05/2025</span></li>
+      <li><a href="/blogs/new-astro-blog/">Another Dev Blog?</a><span>01/14/2025</span></li>
     </li>
   </section>
 </Layout>
 
 <style>
   #posts {
-    width: min(1000px, 90dvw);
+    opacity: 0;
+    width: min(1000px, 80%);
+    margin: 8rem auto;
+    padding: 1rem;
+    border: 2px solid var(--pink);
+    border-radius: 2rem;
+    box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
+    animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    padding: 0.25rem 0 1rem 0;
+  }
+  p {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  ul {
+    padding: 2rem 0;
     margin: 0 auto;
+    width: 70%;
+  }
+
+  li {
+    text-align: start;
+  }
+
+  li a {
+    display: block;
+    width: 100%;
+  }
+
+  li span {
+    font-size: 0.75rem;
   }
 </style>

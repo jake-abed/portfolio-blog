@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 const { name, description, URL, imgURL, techUsed } = Astro.props;
 ---
-<div class="project" >
+<div class="project fade-up" >
   <div class="card">
     <div class="front">
       <Image src={imgURL} width=315 height=182 alt={description}/>
@@ -40,7 +40,7 @@ const { name, description, URL, imgURL, techUsed } = Astro.props;
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
-    cursor:crosshair;
+    cursor: crosshair;
   }
 
   .project .front, .back {
@@ -113,7 +113,7 @@ const { name, description, URL, imgURL, techUsed } = Astro.props;
 
   span { font-weight: 700; font-size: 1.125rem; }
 
-  .project.animation {
+  .project.fade-up.animation {
     animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
   }
 </style>

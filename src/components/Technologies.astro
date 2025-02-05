@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+---
+<div class="technology-wrapper">
+	<h2 class="fade-up">Technologies</h2>
+	<div class="tech-box fade-up">
+		<h3>Frontend</h3>
+		<div class="tech-pieces">
+			<div class="tech">
+				<Image loading="lazy" src="/html5.svg" title="HTML5" alt="HTML5" height="50" width="50"/>
+				<p>HTML</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/css3.svg" title="CSS" alt="CSS" height="50" width="50"/>
+				<p>CSS</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/react.svg" title="React" alt="React" height="50" width="50"/>
+				<p>React</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/tailwind.svg" title="Tailwind" alt="Tailwind" height="50" width="50"/>
+				<p>Tailwind</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/next-js.svg" title="Next.js" alt="Next.js" height="50" width="50"/>
+				<p>Next.js</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/astro.svg" title="Astro" alt="Astro" height="50" width="50"/>
+				<p>Astro</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/typescript.svg" title="TypeScript" alt="TypeScript The Programming Language" height="50" width="50"/>
+				<p>TypeScript</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/javascript.svg" title="javaScript" alt="JavaScript The Programming Language" height="50" width="50"/>
+				<p>JavaScript</p>
+			</div>
+		</div>
+	</div>
+	<div class="tech-box fade-up">
+		<h3>Backend</h3>
+		<div class="tech-pieces">
+			<div class="tech">
+				<Image loading="lazy" src="/go.svg" title="Go" alt="The Go Programming Language" height="50" width="50"/>
+				<p>Go</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/typescript.svg" title="TypeScript" alt="TypeScript The Programming Language" height="50" width="50"/>
+				<p>TypeScript</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/elixir.svg" title="Elixir" alt="The Elixir Programming Language" height="50" width="50"/>
+				<p>Elixir</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/pgsql.svg" title="PostgreSQL" alt="PostgreSQL" height="50" width="50"/>
+				<p>PostgreSQL</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/graphql.svg" title="GraphQL" alt="GraphQL" height="50" width="50"/>
+				<p>GraphQL</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/nodejs.svg" title="Node.js" alt="The Node.js Runtime" height="50" width="50"/>
+				<p>Node.js</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/deno.svg" title="Deno" alt="The Deno Runtime" height="50" width="50"/>
+				<p>Deno</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/python.svg" title="Python" alt="The Python Programming Language" height="50" width="50"/>
+				<p>Python</p>
+			</div>
+		</div>
+	</div>
+	<div class="tech-box fade-up">
+		<h3>Tooling & More</h3>
+		<div class="tech-pieces">
+			<div class="tech">
+				<Image loading="lazy" src="/git.svg" title="Git" alt="Git" height="50" width="50"/>
+				<p>Git</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/nvim.svg" title="NeoVim" alt="NeoVim" height="50" width="50"/>
+				<p>NeoVim</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/godot.svg" title="Godot" alt="The Godot Game Engine" height="50" width="50"/>
+				<p>Godot</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/postman.svg" title="Postman" alt="Postman" height="50" width="50"/>
+				<p>Postman</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/k8.svg" title="Kubernetes" alt="Kubernetes" height="50" width="50"/>
+				<p>Kubernetes</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/docker.svg" title="Docker" alt="Docker" height="50" width="50"/>
+				<p>Docker</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/gcp.svg" title="GCP" alt="GCP" height="50" width="50"/>
+				<p>GCP</p>
+			</div>
+			<div class="tech">
+				<Image loading="lazy" src="/linux.svg" title="Linux" alt="Linux" height="50" width="50"/>
+				<p>Linux</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	h2 {
+		opacity: 0;
+		text-align: center;
+	}
+	h2.animation {
+    	animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
+	}
+
+	.technology-wrapper {
+		width: min(1000px, 90dvw);
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.tech-box {
+		opacity: 0;
+		display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+		padding: 0.5rem 2rem;
+    	gap: 1rem;
+    	border: 2px solid var(--pink);
+    	border-radius: 1rem;
+    	box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
+	}
+
+	.tech-box.animation {
+    	animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
+	}
+
+	.tech-box h3 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		padding: 1rem 0 0 0;
+		text-align: center;
+	}
+	
+	.tech-pieces {
+		display: flex;
+		padding: 1rem;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 2.5rem;
+	}
+
+	.tech {
+		min-width: 75px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+		gap: 0.5rem;
+	}
+
+	.tech p {
+		text-align: center;
+		font-size: 0.875rem;
+	}
+
+	.tech img {
+		filter: drop-shadow(0 0 4px #99999999);
+	}
+	
+	:global(.dark) .tech img {
+		filter: drop-shadow(0 0 6px #99999966);
+
+	}
+</style>

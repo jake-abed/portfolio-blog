@@ -7,16 +7,25 @@ const desc = "Information all aboout Jake Abed, software engineer & philosopher 
 
 <Layout title={title} description={desc}>
   <section id="about">
-    <h1>About Me</h1>
+    <h1>About Jake</h1>
     <h2>Also known as the "Jake of All Trades"...</h2>
-    <p>Being a polymath is cooler than people give it credit for in my opinion.</p>
+    <p>My path to being a professional programmer is a little different than a fair amount of people. I always loved computers, maybe even a little too much for my parents tastes sometimes. I would play games, putz, tinker, break stuff, and get into trouble with them as much as possible. I even programmed a little BASIC when I was younger.</p>
+    <p>But for <em>some</em> reason, I thought that I just wasn't cut out for programming. I never stopped dabbling and even took a course on Computer Science at UC Berkeley, but I didn't commit to the craft. That all changed when the opportunity to make an internal tool at my last job arose and I jumped at it From that point forward, I just kept learning and picking up more and more.</p>
+    <p>My main areas of interest are web-servers, game development, and language design. That being said, I never limit myself; I'm the "Jake of All Trades" after all!</p>
+
   </section>
 </Layout>
 
 <style>
   #about {
-    width: min(1000px, 90dvw);
-    margin: 0 auto;
+    opacity: 0;
+    width: min(1000px, 80%);
+    margin: 8rem auto;
+    padding: 1rem;
+    border: 2px solid var(--pink);
+    border-radius: 2rem;
+    box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
+    animation: 1s ease-in-out 0.05s 1 forwards fade-in-up;
   }
 
   h1, h2 {
@@ -24,12 +33,15 @@ const desc = "Information all aboout Jake Abed, software engineer & philosopher 
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     padding: 1rem 0;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0.25rem 0 1rem 0;
+  }
+  p {
+    padding: 0.5rem 0;
   }
 </style>
