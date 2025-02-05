@@ -48,7 +48,7 @@ const { title, description } = frontmatter;
 
   #blog .astro-code {
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     overflow: scroll;
   }
   </style>
@@ -56,9 +56,10 @@ const { title, description } = frontmatter;
 <style>
   #blog {
     opacity: 0;
-    width: min(1000px, 80%);
+    box-sizing: border-box;
+    width: min(800px, 90%);
     margin: 8rem auto;
-    padding: 1rem;
+    padding: 0.75rem 2rem 1.5rem 2rem;
     border: 2px solid var(--pink);
     border-radius: 2rem;
     box-shadow: inset 0px 0px 8px 2px var(--transparent-pink);
