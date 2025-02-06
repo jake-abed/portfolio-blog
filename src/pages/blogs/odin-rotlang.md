@@ -38,16 +38,17 @@ dumb, but also oddly practical?
 
 ## Enter Odin
 
-Okay, truthfully... I just wanted to try Odin. The C with bits of Pascal & Go
-sprinkled in really just made sense to me.
+Okay, truthfully... there's no super clear reason I went with Odin; I just
+wanted to try Odin. The C with bits of Pascal & Go sprinkled in really just made
+sense to me.
 
 So I thought, hey, I can just knock out a lexer and spit out some tokens really
 easily, right? No need to build the whole thing, but tokenization is a good step
 to get to for defining language syntax.
 
-## Just Put The Fries In The Bag Bro...
+## Just Put The Fries In The Bag, Bro...
 
-Okay, heres the main file feature a snippet of code:
+Okay, heres the main file of the program feature a snippet of code:
 
 ```zig
 main :: proc() {
@@ -68,7 +69,9 @@ main :: proc() {
 }
 ```
 
-This fairly C-like syntax pumps out the following tokens:
+Nothing crazy, right? `lexer.init(s)` return the pointer to a Lexer struct. We
+then just run a loop that lexes the input until we hit the EOF character at the
+end. This goofy, but fairly C-like syntax pumps out the following tokens:
 
 ```bash
 Token{Type = "CONST", Literal = "aight"}
@@ -100,5 +103,50 @@ Token{Type = "SEMICOLON", Literal = ";"}
 Token{Type = "EOF", Literal = ""}
 ```
 
-I'm going to **hell** for this aren't I? If I keep working on this I'll probably
-go crazy.
+I'm probably going to **hell** for this aren't I? If I keep working on this I'll
+probably go crazy.
+
+## What's Going On With This Lexer?
+
+There's really nothing special or magical happening here: it's a pretty
+threadbare lexer. You may notice that we're not even tracking line number or any
+useful data that a parser could use to flag syntax errors. Just vomitting out
+tokens and literals.
+
+Frankly, the best thing about this was using Odin: it feels exactly like C, but
+with a lot of Quality of Life features stapled on (like an actual Array data
+structure & Go-like type inference) that make working in it relatively fast.
+Take a look at the Lexer struct and the subsequent init procedure (function):
+
+```zig
+Lexer :: struct {
+	input:        string,
+	position:     int,
+	readPosition: int,
+	ch:           byte,
+}
+
+init :: proc(inp: string) -> ^Lexer {
+	l := new(Lexer)
+	l^ = Lexer{}
+	l.input = inp
+	l.position = 0
+	l.readPosition = 0
+	l.ch = 0
+	readChar(l)
+	return l
+}
+```
+
+It was an easy adjustment overall: methods are not a thing in Odin, but as far
+as I remember, they're just syntactic sugar in Go. Just pass in a pointer to a
+struct as the first argument and you're golden. Also, notice that `^` character?
+That's the pointer dereference operator! It isn't too big of a shift for me
+since it reminded me of the pin operator in Elixir a tiny bit (okay, not the
+same thing really, but let me have that).
+
+Anyway, that's about it for now. I'll be back soon with some updates on Lore and
+talking about making your first CLI with no experience probably. Or maybe
+talking about DeepSeek-R1... Unless I get arrested for using it, lol.
+
+-Jake
