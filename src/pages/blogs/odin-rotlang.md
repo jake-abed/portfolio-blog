@@ -16,7 +16,7 @@ Published on: 2025-02-04
 
 A few months ago I was putzing around in a Discord server and the topic of
 language design got brought up. I've always been curious about the topic, but
-never took the leap. Someone recommende that I check out
+never took the leap. Someone recommended that I check out
 [Writing An Interpreter In Go](https://interpreterbook.com/) by Thorsten Ball.
 
 Holy hell, what a good recommendation. The book perfectly balances accessibility
