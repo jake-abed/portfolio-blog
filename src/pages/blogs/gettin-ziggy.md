@@ -14,9 +14,11 @@ tags:
 
 Published on: 2025-02-10
 
-Okay, so I played around with Odin earlier and had a great time. There are a lot
-of things to love about it. For example, what's not too love about the walrus
-operator (`:=`) and the four-eyes operator (`::`) for assignment? It's heavenly.
+Okay, so I played around with Odin earlier and had a great time. Now, it
+probably says a bit about me that I think that's a 'good time' but so be it!
+There are a lot of things to love about it. For example, what's not too love
+about the walrus operator (`:=`) and the four-eyes operator (`::`) for
+assignment? It's heavenly.
 
 But everyone and their mother keeps crowing about Zig lately. Zig this. Zig
 that. Zig cured my depression. Zig got me a job. Zig solved world hunger. Zig
@@ -48,7 +50,7 @@ with this analogy:
 > could get too!? You might end up with a burnt cake if the temp in the oven is
 > wrong. You could get a brick cake if you work it too much and make it tough.
 
-It's inelegant, but this does make it make sense reasonably well.
+It's inelegant, but I think it makes just enough sense to non-technical folks.
 
 ### Zig vs. Odin
 
@@ -136,7 +138,7 @@ earlier.
 ## Enter The Arena
 
 You see, everything I was doing was almost completely on the stack. I believe
-that my issue was simple and frustrating: in the main file, I would initialize a
+that my issue was simple and frustrating: in `main.zig` I would initialize a
 Lexer (cool, no big deal) and then ask it to loop over the lexer until an `EOF`
 token is found (also chill, easy enough). But when I'd go to take a look at what
 was inside the tokens I had generated, the line, column, and type were
@@ -162,7 +164,7 @@ me.
 
 ## What's Next?
 
-I have two things:
+I have two things in mind:
 
 1. My new game OctoDive is well under way and I need to kick it into high gear.
    I like the idea and it's shaping up quite nicely.
@@ -171,4 +173,4 @@ I have two things:
    details that I have yet to broach in development. Audio streaming,
    efficiently storing and converting large audio files, and payments for users.
    It's scary to know all the work that can go into a project and then dive in.
-   Sometimes it better to be stupid and naive.
+   Sometimes it is better to be stupid and just do it ;)
