@@ -75,15 +75,23 @@ const { title, description } = frontmatter;
     font-weight: 700;
   }
 
-  #blog > p > code {
+  #blog > p > code, #blog > ol > li > code {
     background-color: var(--transparent-pink);
     color: white;
     padding: 0.1rem 0.2rem;
     border-radius: 0.25rem;
   }
+
+  #blog p:has(img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   #blog p img {
-    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    max-height: 50svh;
   }
 
   </style>

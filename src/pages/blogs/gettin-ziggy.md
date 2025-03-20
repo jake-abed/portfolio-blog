@@ -12,7 +12,7 @@ tags:
 
 # Gettin' Ziggy With It: Lexers & Ziglings
 
-Published on: 2025-02-10
+Published on: 2025-02-11
 
 Okay, so I played around with Odin earlier and had a great time. Now, it
 probably says a bit about me that I think that's a 'good time' but so be it!
