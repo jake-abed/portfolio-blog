@@ -220,6 +220,135 @@ pub fn fetch(self: *Self) void {
 
 Dummy simple, huh? It's what I described a little earlier... Just glue the
 contents of the two different memory addresses together, and bump the program
-counter up two.
+counter up two. Then it's time to decode the opcode and execute it. First things
+first, let's isolate all the pieces of the opcode:
 
-\[Editor's Note: I'm tired and finishing this tomorrow.\]
+```zig
+pub fn decode(self: *Self) void {
+    const nibble: u4 = @intCast(self.opcode >> 12);
+    const nnn: u12 = @intCast(self.opcode & 0x0FFF);
+    const x: u4 = @intCast((self.opcode & 0x0F00) >> 8);
+    const y: u4 = @intCast((self.opcode & 0x00F0) >> 4);
+    const z: u4 = @intCast(self.opcode & 0x000F);
+    const kk: u8 = @intCast(self.opcode & 0x00FF);
+
+    // To continue further down...
+```
+
+The opcode we 'glued' together early has four `u4` 'nibbles'. Each single
+nibble, or combination of nibbles, can mean something different in the different
+instructions. Let's cover each one:
+
+1. `nibble` or is the first four bits of the opcode. This will determine which
+   instruction we run and we will switch on it. That's more or less the whole
+   purpose of this one. NB: My naming of this is unconventional and we'll get
+   into that later.
+2. 'NNN' are the last bits of the opcode and typically represent a pointer to a
+   memory address we want to check later.
+3. `x`, `y`, & `z` are the first, second, and third set of four bits from 'NNN'.
+   They will be used in various bitwise, register store, and drawing operations.
+   Keep in mind this largely works because our stack and register will largely
+   fit into a `u4` int. Typically `z` is referred to as `n` or `nibble`, but I
+   find that counter-intuitive.
+4. Finally, `kk`. It's only used a few times, but will be important for some
+   operations with memory and registers.
+
+This are the glue for the entire thing: aside from initially getting the bits
+out, there are only a few significantly difficult parts of this project. The
+difficulty spike for me here was that I hadn't really done a large amount of
+bitwise operations.
+
+If you have ever struggled reasoning about bitwise operations, I highly
+recommend trying this project (and specifically this part) out.
+
+Anyway, here are the necessary instructions to make the IBM logo work:
+
+```zig
+    switch (nibble) {
+        0x0 => {
+            switch (nnn) {
+                0x0E0 => {
+                    // Clear the display
+                    for (0.., self.display) |y_pos, row| {
+                        for (0.., row) |x_pos, _| {
+                            self.display[y_pos][x_pos] = 0x0;
+                        }
+                    }
+                },
+                // Other stuff...
+                else => {
+                    return;
+                },
+            }
+        },
+        0x1 => {
+            self.pc = nnn;
+        },
+        // Opcodes 2 through 5 aren't needed yet.
+        0x6 => {
+            self.registers[x] = kk; // set register x to kk
+        },
+        0x7 => {
+            self.registers[x] += kk;
+        },
+        // 0x8 is a doozy, but not necessary for the IBM logo.
+        0xA => {
+            self.ir = @as(u16, nnn);
+        },
+        // Yeah... 0xD is brutal...
+        0xD => {
+            const vx = self.registers[x];
+            const vy = self.registers[y];
+            self.registers[0xF] = 0x0;
+
+            var i: usize = 0;
+            while (i < z) : (i += 1) {
+                const spr_line = self.memory[self.ir + i];
+
+                var col: usize = 0;
+                while (col < 8) : (col += 1) {
+                    const sig_bit: u8 = 128;
+                    if ((spr_line & (sig_bit >> @intCast(col))) != 0) {
+                        const x_pos = (vx + col) % 64;
+                        const y_pos = (vy + i) % 32;
+
+                        self.display[y_pos][x_pos] ^= 1;
+
+                        if (self.display[y_pos][x_pos] == 0) {
+                            self.registers[0xF] = 1;
+                        }
+                    }
+                }
+            }
+        },
+        else => { // ... You get the idea, right? },
+    }
+```
+
+As I'm sure you can tell, it's all insanely simple... aside from `0xD`!
+Truthfully, nothing too bad is even happening in the draw instruction, it's just
+a little hard to reason about. In so many words you want to:
+
+1. Grab the values of `vx` and `vy`.
+2. Flip `vf` to 0.
+3. Then loop over the size of `z` which represents the sprite height.
+4. XOR the pixel at the current location if it should be turned on.
+5. If the pixel got turned off, a collision happened and you should flip `vf`
+   on!
+
+## It Works!
+
+That's really it. As a result we get the absolutely boring, but milestone
+achievement:
+
+![Da IBM logo...](/chip-8-ibm-logo.png)
+
+Truthfully, there's a fair chunk left to do, but most of the heavy lifting is
+officially done. The keyboard and inputs need to be handled as well as a variety
+of remaining instructions. But the bones are in place for a solid
+implementation.
+
+Until next time, may yours structs be beautifully aligned!
+
+P.S. Here's the [repository on GitHub](https://github.com/jake-abed/chip-8) in
+case you want to take a peek.
