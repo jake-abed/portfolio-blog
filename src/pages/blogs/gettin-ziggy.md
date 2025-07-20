@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogLayout.astro'
 title: "Gettin' Ziggy With It: Learning Zig With Ziglings"
-pubDate: 2025-01-14
+pubDate: 2025-02-11
 description:
   'Manage memory? Hell nah, I just want to write vanilla JS until my eyes bleed
   and my wife leaves me.'

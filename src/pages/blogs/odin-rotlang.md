@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogLayout.astro'
 title: 'Making A Rotlang Lexer In Odin'
-pubDate: 2025-01-14
+pubDate: 2025-02-04
 description:
   "What's a 'Rotlang' you ask? Glad you asked. It's a language with brainrot
   syntax. Why Odin? What's with all the questions?"
