@@ -19,7 +19,8 @@ tags:
 
 # The Logical Next Step: A Gameboy Emulator in Rust
 
-> Note: This blog is currently a work in progress! Thank you for your patience.
+> Note: Between work and other projects, the Gameboy Emulator project has taken
+> a backseat for me. I've left this blog here in all its glory though.
 
 After getting my Chip-8 emulator written in Zig, I asked myself... what's the
 next step? Chip-8 is often seen as the first step in learning emulation, despite
@@ -57,5 +58,22 @@ more complex and unsatisfying for a noob:
 You see, the Chip-8 is an onboarding point, so the resources are **_very_**
 beginner friendly. The default resources spend more time answering simple
 questions or explaining context in a granular way. As for the Gameboy, the
-resources assume you have a higher depth and breadth of knowledge as to basic
-operations and behaviors.
+resources assume you have a greater depth **_and_** breadth of knowledge as to
+basic operations and behaviors.
+
+## Update: on hold for now
+
+Life happened and other projects are cooking. I decided to take a pause on this
+project for several reasons.
+
+1. I wasn't finding Rust fun. This is ultimately the big kicker. Whenever I
+   wrote Zig, I felt super happy. To confirm this suspicion, I went back and
+   worked on my Zig Lexer. Aside from some time spent figuring out updates, it
+   was just more pleasant to write.
+2. I've been working. There's only so many hours in the day and I'm not sure I'm
+   trying to get hired somewhere else writing Rust. I began asking myself, how
+   worth it is this project right now?
+3. Making games is higher priority for me right now. Enough said, right?
+
+Someday I will return to this project, but for now it's going into the temporary
+graveyard for it to be eventually dug out and re-animated.

@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/netlify": "^6.5.5",
     "@astrojs/node": "^9.3.3",
-    "@fontsource/fira-code": "^5.1.1",
+    "@fontsource/fira-code": "^5.2.7",
     "astro": "^5.12.8"
   }
 }

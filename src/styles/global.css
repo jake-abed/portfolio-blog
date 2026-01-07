@@ -49,6 +49,15 @@ html.dark {
 	color: var(--white);
 }
 
+blockquote {
+	padding: 0;
+	margin: 1rem;
+}
+
+blockquote p {
+	padding: 0;
+}
+
 .dark a {
 	color: var(--white);
 }
