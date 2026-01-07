@@ -154,3 +154,24 @@ thinking, "Yeah, why the heck am I doing this anyway?"
 
 And like a virus, it begins to spread; then before you know it, the project is
 in your graveyard whether you put it there intentionally or not.
+
+# And I repeat... your time is limited
+
+It's trite, but we only have so many hours on this earth. With so many days,
+numbered with twenty-four hours, why burn those hours on something that has
+already run its course for you? I quickly realized that on each of these
+projects I had won a hard learned lesson or skill.
+
+If a project isn't serving you, let it go. There's no shame in sending it to the
+project graveyard. You can also always resurrect the bodies in the
+aforementioned graveyard... as unlikely as that is. Typically, dead means dead,
+even for projects.
+
+# That's all for now, folks...
+
+That's all the rumination I've got. This was a slightly meandering and maybe
+ineffectual blog post, but **_I needed it_** for myself. If you've made it this
+far, enjoy a sneak peak at my upcoming video game. I will not explain what is
+going on...
+
+<p><img src="/interior-ice-fishing-recording.webp" alt="Interior Ice Fishing?"/></p>
